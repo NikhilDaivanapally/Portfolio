@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gilroy";
+}
+html {
+  scroll-behavior: smooth;
+}
+
+[data-theme="light"] {
+  --background: 255 255 255;
+  --textcolor: 0 0 0;
+  --Navbackground: 243, 244, 246;
+  --Navborder: 229, 231, 235;
+  --cardsbackground: 229 231 235;
+}
+[data-theme="dark"] {
+  --background: 15 23 42;
+  --textcolor: 255 255 255;
+  --Navbackground: 30 41 59;
+  --cardsbackground: 30 41 59;
+  --Navborder: 51 65 85;
+}
