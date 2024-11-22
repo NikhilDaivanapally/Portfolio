@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "gilroy";
-  src: url("./assets/GILROY-MEDIUM.TTF");
+  src: url("/src/assests/GILROY-MEDIUM.TTF");
 }
 * {
   margin: 0;
