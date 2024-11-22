@@ -106,7 +106,7 @@ const Projects = () => {
         to={"/projects"}
         className="relative z-5 w-full sm:w-fit sm:m-auto p-2 px-4 cursor-pointer rounded-full border-[1px] border-[#827EFC]"
       >
-        <p className="text-center">See More Projects</p>
+        See More Projects
       </Link>
     </div>
   );
