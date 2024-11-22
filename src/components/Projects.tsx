@@ -7,7 +7,7 @@ import { Projectslist } from "../data";
 import { Tilt } from "react-tilt";
 import { Link } from "react-router-dom";
 
-const TechStacks:any = {
+const TechStacks: any = {
   Html: <FaHtml5 className="stroke-[#E24E25] fill-[#E24E25]" />,
   Css: <FaCss3Alt className="stroke-[#264DE4] fill-[#264DE4]" />,
   Js: <IoLogoJavascript className="stroke-[#F0DC4E] fill-[#cdb609]" />,
@@ -42,7 +42,7 @@ const Projects = () => {
       </div>
 
       <div className="relative z-5 w-full  flex flex-wrap justify-center gap-6 py-10 sm:py-20 px-0 sm:px-10">
-        {Projectslist?.slice(0,3)?.map((project, i) => {
+        {Projectslist?.slice(0, 3)?.map((project, i) => {
           return (
             <Tilt
               key={i}
