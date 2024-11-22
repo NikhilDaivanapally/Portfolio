@@ -4,6 +4,7 @@ import { Template } from "../template";
 import { Socials } from "../data";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+const access_key = import.meta.env.VITE_web3form_AccessKey;
 const Contact = () => {
   const [isSent, setIsSent] = useState(false);
   useEffect(() => {
@@ -14,8 +15,7 @@ const Contact = () => {
     event.preventDefault();
     setIsSent(true);
     const formData = new FormData(event.target);
-
-    formData.append("access_key", "e4cb0869-cb1d-4931-9fa0-9ed4e889399a");
+    formData.append("access_key", access_key);
     const email = formData.get("email");
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 

@@ -4,14 +4,13 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { Navigates } from "./data";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { CiDark, CiLight } from "react-icons/ci";
-import  ToastConfig from "./toastConfig/ToastConfig"
+import ToastConfig from "./toastConfig/ToastConfig";
 const Layout = () => {
   const [navbar, setNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarktheme, setIsDarkTheme] = useState(false);
   const [active, setActive] = useState(0);
   const { pathname } = useLocation();
-  console.log(active);
   useEffect(() => {
     let index = Navigates.findIndex((el) => el.path == pathname);
     setActive(index);
