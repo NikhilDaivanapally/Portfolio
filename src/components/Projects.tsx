@@ -6,9 +6,8 @@ import { SiExpress, SiMongodb } from "react-icons/si";
 import { Projectslist } from "../data";
 import { Tilt } from "react-tilt";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
-const TechStacks = {
+const TechStacks:any = {
   Html: <FaHtml5 className="stroke-[#E24E25] fill-[#E24E25]" />,
   Css: <FaCss3Alt className="stroke-[#264DE4] fill-[#264DE4]" />,
   Js: <IoLogoJavascript className="stroke-[#F0DC4E] fill-[#cdb609]" />,

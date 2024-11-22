@@ -9,7 +9,6 @@ const Footer = () => {
   function handleMouseEnter(e: MouseEvent) {
     console.log("Mouse entered");
     const element = e.currentTarget as HTMLElement;
-    const translate = element.getBoundingClientRect().height;
     const spans = element.querySelectorAll("span");
     const spans1 = element.querySelectorAll(".child1 span");
     const spans2 = element.querySelectorAll(".child2 span");

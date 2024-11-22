@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 
 const TechStacks = () => {
-  const Technologies = {
+  const Technologies:any = {
     frontend: {
       Html: <FaHtml5 className="stroke-[#E24E25] fill-[#E24E25]" />,
       Css: <FaCss3Alt className="stroke-[#264DE4] fill-[#264DE4]" />,

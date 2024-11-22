@@ -14,9 +14,9 @@ const Contact = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSent(true);
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target as HTMLFormElement);
     formData.append("access_key", access_key);
-    const email = formData.get("email");
+    const email:any = formData.get("email");
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
     const isValidEmail = emailRegex.test(email);
@@ -29,7 +29,7 @@ const Contact = () => {
       const data = await response.json();
 
       if (data.success) {
-        event.target.reset();
+        (event.target as HTMLFormElement).reset();
         toast.success("Message sent successfully");
       } else {
         console.log("Error", data);

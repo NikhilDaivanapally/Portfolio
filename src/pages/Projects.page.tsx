@@ -7,13 +7,12 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { animatePageIn } from "../animation/page.anim";
 import { Projectslist } from "../data";
-import { Tilt } from "react-tilt";
 
 const Projects = () => {
   useEffect(() => {
     animatePageIn();
   }, []);
-  const TechStacks = {
+  const TechStacks: any = {
     Html: <FaHtml5 className="stroke-[#E24E25] fill-[#E24E25]" />,
     Css: <FaCss3Alt className="stroke-[#264DE4] fill-[#264DE4]" />,
     Js: <IoLogoJavascript className="stroke-[#F0DC4E] fill-[#cdb609]" />,
@@ -24,17 +23,17 @@ const Projects = () => {
     Mongodb: <SiMongodb className="stroke-[#18A54F] fill-[#18A54F]" />,
   };
 
-  const defaultOptions = {
-    reverse: false, // reverse the tilt direction
-    max: 15, // max tilt rotation (degrees)
-    perspective: 500, // Transform perspective, the lower the more extreme the tilt gets.
-    scale: 1, // 2 = 200%, 1.5 = 150%, etc..
-    speed: 1000, // Speed of the enter/exit transition
-    transition: true, // Set a transition on enter/exit.
-    axis: null, // What axis should be disabled. Can be X or Y.
-    reset: true, // If the tilt effect has to be reset on exit.
-    easing: "cubic-bezier(0.22, 1, 0.36, 1)", // Easing on enter/exit.
-  };
+  // const defaultOptions = {
+  //   reverse: false, // reverse the tilt direction
+  //   max: 15, // max tilt rotation (degrees)
+  //   perspective: 500, // Transform perspective, the lower the more extreme the tilt gets.
+  //   scale: 1, // 2 = 200%, 1.5 = 150%, etc..
+  //   speed: 1000, // Speed of the enter/exit transition
+  //   transition: true, // Set a transition on enter/exit.
+  //   axis: null, // What axis should be disabled. Can be X or Y.
+  //   reset: true, // If the tilt effect has to be reset on exit.
+  //   easing: "cubic-bezier(0.22, 1, 0.36, 1)", // Easing on enter/exit.
+  // };
   return (
     <Template page="Projects">
       <div className="Project p-5 w-full min-h-screen">
