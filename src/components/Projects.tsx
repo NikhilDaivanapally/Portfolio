@@ -5,7 +5,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { Projectslist } from "../data";
 import { Tilt } from "react-tilt";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TechStacks: any = {
   Html: <FaHtml5 className="stroke-[#E24E25] fill-[#E24E25]" />,
@@ -29,7 +29,6 @@ const defaultOptions = {
   easing: "cubic-bezier(0.22, 1, 0.36, 1)", // Easing on enter/exit.
 };
 const Projects = () => {
-  const Navigate = useNavigate();
   return (
     <>
       <div className="projects w-full h-fit px-5 sm:p-10 flex flex-col">
