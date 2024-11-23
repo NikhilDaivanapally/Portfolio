@@ -10,6 +10,9 @@ export default {
         Navborder: "rgba(var(--Navborder))",
         cardsbackground: "rgba(var(--cardsbackground))",
       },
+      fontFamily: {
+        Gilroy: ["gilroy", "sans-serif"],
+      },
     },
   },
   plugins: [

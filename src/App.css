@@ -1,39 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+html {
+  scroll-behavior: smooth;
+}
+
+[data-theme="light"] {
+  --background: 255 255 255;
+  --textcolor: 0 0 0;
+  --Navbackground: 243, 244, 246;
+  --Navborder: 229, 231, 235;
+  --cardsbackground: 229 231 235;
+}
+[data-theme="dark"] {
+  --background: 15 23 42;
+  --textcolor: 255 255 255;
+  --Navbackground: 30 41 59;
+  --cardsbackground: 30 41 59;
+  --Navborder: 51 65 85;
+}
+
 .loader {
-    width: 3.25em;
-    transform-origin: center;
-    /* animation: rotate4 2s linear infinite; */
-    scale: 0.8;
+  width: 3.25em;
+  transform-origin: center;
+  /* animation: rotate4 2s linear infinite; */
+  scale: 0.8;
+}
+
+.spin {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .spin {
-    fill: none;
-    stroke: white;
-    stroke-width: 3;
+}
+
+@keyframes dash4 {
+  0% {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
-    stroke-linecap: round;
-    animation: dash4 1.5s ease-in-out infinite;
   }
-  
-  @keyframes rotate4 {
-    100% {
-      transform: rotate(360deg);
-    }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
   }
-  
-  @keyframes dash4 {
-    0% {
-      stroke-dasharray: 1, 200;
-      stroke-dashoffset: 0;
-    }
-  
-    50% {
-      stroke-dasharray: 90, 200;
-      stroke-dashoffset: -35px;
-    }
-  
-    100% {
-      stroke-dashoffset: -125px;
-    }
+
+  100% {
+    stroke-dashoffset: -125px;
   }
-  
+}

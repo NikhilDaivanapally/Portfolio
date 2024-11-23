@@ -44,8 +44,8 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative bg-background overflow-hidden text-textcolor">
-      <div className="hidden sm:flex absolute w-full items-center pt-4 justify-center">
+    <div className="relative  bg-background overflow-hidden text-textcolor">
+      <div className="hidden bg-red-200 sm:flex w-full items-center pt-4 justify-center">
         <div className="w-fit h-[50px] bg-Navbackground ring-1 ring-Navborder  rounded-sm  text-textcolor p-4 hidden  sm:flex sm:items-center sm:gap-10  ">
           {!(pathname == "/") && (
             <Link to={"/"} key={"home"}>
