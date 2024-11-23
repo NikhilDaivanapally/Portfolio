@@ -44,8 +44,12 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
       <AnimatePresence mode="wait">
         {isMenuOpen && (
           <div
-            className="fixed z-40 inset-0 bg-[rgba(0,0,0,0.5)]"
-            // onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="fixed parentContainer z-40 inset-0 bg-[rgba(0,0,0,0.5)]"
+            onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+              (e.target as HTMLDivElement)?.classList.contains(
+                "parentContainer"
+              ) && setIsMenuOpen((prev) => !prev)
+            }
           >
             <motion.div
               variants={menuSlide}
@@ -54,7 +58,6 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
               exit="exit"
               className="absolute right-0 top-0 w-[350px] h-full bg-background text-textcolor text-black p-[50px]"
             >
-
               {/* navigations */}
               <div className="py-2 border-b-2 border-black">Take Me To</div>
               <div className=" w-[200px] mt-5 flex flex-col gap-10">
@@ -62,6 +65,7 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                   <Link to={el.path}>
                     <span
                       key={i}
+                      onClick={() => setIsMenuOpen((prev) => !prev)}
                       className={`relative w-fit flex cursor-pointer text-5xl font-semibold group hover:text-[#827EFC]`}
                     >
                       <MdOutlineArrowForwardIos
@@ -81,10 +85,10 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                 <FaInstagram className="cursor-pointer transition-all duration-100 hover:text-red-400" />
                 <FaLinkedin className="cursor-pointer transition-all duration-100 hover:text-blue-400" />
               </div>
-               {/* dark mode toggle */}
+              {/* dark mode toggle */}
               <div className="mt-20 flex justify-between sm:hidden">
-                <p className="font-semibold">Dark Mode</p> 
-                  <ThemeBtn id={2} />
+                <p className="font-semibold">Dark Mode</p>
+                <ThemeBtn id={2} />
               </div>
             </motion.div>
           </div>

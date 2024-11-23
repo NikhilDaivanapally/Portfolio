@@ -8,7 +8,7 @@ const About = () => {
   }, []);
   return (
     <Template page="About">
-      <div className="Project p-5 w-full">
+      <div className="Project min-h-screen p-5 w-full">
         <p className="text-4xl">About</p>
         <div className="flex flex-col md:flex-row justify-center  mt-10 gap-20">
           <div className="m-auto md:m-0 w-40 h-40 rounded-full overflow-hidden">
