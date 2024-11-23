@@ -41,11 +41,7 @@ const Projects = () => {
         <div className="relative z-5 w-full  flex flex-wrap justify-center gap-6 py-5 sm:py-10 px-0 sm:px-10">
           {Projectslist.map((project, i) => {
             return (
-              // <Tilt
-              //   key={i}
-              //   options={defaultOptions}
-              //   className="project opacity-1 translate-y-5 cursor-pointer rounded-lg shadow-lg transition-all duration-100 hover:scale-[1.05] "
-              // >
+
               <div
                 key={`project${i + 1}`}
                 className="w-full h-fit gap-4 cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[500px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03]"
@@ -93,7 +89,6 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              // </Tilt>
             );
           })}
 
