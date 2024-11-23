@@ -3,12 +3,11 @@ import Navbar from "./components/Navbar";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Navigates } from "./data";
 import { BiHomeAlt2 } from "react-icons/bi";
-import { CiDark, CiLight } from "react-icons/ci";
 import ToastConfig from "./toastConfig/ToastConfig";
+import ThemeBtn from "./components/ThemeBtn";
 const Layout = () => {
   const [navbar, setNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarktheme, setIsDarkTheme] = useState(false);
   const [active, setActive] = useState(0);
   const { pathname } = useLocation();
   useEffect(() => {
@@ -37,11 +36,7 @@ const Layout = () => {
     };
   }, [isMenuOpen]);
 
-  const handleChangeTheme = () => {
-    const theme = !isDarktheme;
-    document.body.setAttribute("data-theme", `${theme ? "dark" : "light"}`);
-    setIsDarkTheme((prev) => !prev);
-  };
+  
 
   return (
     <div className="relative w-full h-full bg-background  text-textcolor">
@@ -67,21 +62,8 @@ const Layout = () => {
             </Link>
           ))}
         </div>
-        <div className="absolute right-10">
-          <input
-            type="checkbox"
-            id="theme"
-            className="peer cursor-pointer"
-            hidden
-            checked={isDarktheme}
-            onChange={handleChangeTheme}
-          />
-          <label
-            htmlFor="theme"
-            className="hidden cursor-pointer sm:flex  after:transition-all duration-300 peer-checked:after:translate-x-full right-40 text-xl bg-Navbackground ring-1 ring-Navborder  w-16 h-8 rounded-full items-center justify-between px-2 py-2 after:content-[''] after:absolute after:w-6 after:h-6 after:bg-[#827EFC] after:rounded-full"
-          >
-            <CiLight /> <CiDark />
-          </label>
+        <div className="absolute right-10 hidden sm:flex">
+          <ThemeBtn id={1} />
         </div>
       </div>
 

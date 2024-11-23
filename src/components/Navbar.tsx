@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuSlide } from "../animation/Menu.anim";
 // import Text3D from "./ui/Text3D";
@@ -7,6 +7,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Navigates } from "../data";
 import { Link, useLocation } from "react-router-dom";
 import { BiHomeAlt2 } from "react-icons/bi";
+import ThemeBtn from "./ThemeBtn";
 interface navProps {
   navbar: boolean;
   isMenuOpen: boolean;
@@ -16,14 +17,17 @@ interface navProps {
 // const Navigates: string[] = ["Projects", "Contact", "About"];
 const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
   const { pathname } = useLocation();
+
   return (
     <>
       <div className="fixed z-50 right-5 top-5 flex items-center gap-2">
-      { !(pathname == "/") && <Link to={"/"} className="sm:hidden">
-          <div className="w-10 h-10 rounded-full bg-background border-[1px] flex items-center justify-center border-[#c9c7fe]">
-            <BiHomeAlt2 className="text-xl" />
-          </div>
-        </Link>}
+        {!(pathname == "/") && (
+          <Link to={"/"} className="sm:hidden">
+            <div className="w-10 h-10 rounded-full bg-background border-[1px] flex items-center justify-center border-[#c9c7fe]">
+              <BiHomeAlt2 className="text-xl" />
+            </div>
+          </Link>
+        )}
         <div
           className={`relative w-10 h-10 flex cursor-pointer transition-all duration-100 ease-in bg-background ring-1 ring-[#c9c7fe] rounded-full sm:scale-0 ${
             navbar ? "sm:scale-100" : ""
@@ -41,7 +45,7 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
         {isMenuOpen && (
           <div
             className="fixed z-40 inset-0 bg-[rgba(0,0,0,0.5)]"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
+            // onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             <motion.div
               variants={menuSlide}
@@ -50,6 +54,8 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
               exit="exit"
               className="absolute right-0 top-0 w-[350px] h-full bg-background text-textcolor text-black p-[50px]"
             >
+
+              {/* navigations */}
               <div className="py-2 border-b-2 border-black">Take Me To</div>
               <div className=" w-[200px] mt-5 flex flex-col gap-10">
                 {Navigates.map((el, i) => (
@@ -68,11 +74,17 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                   // <Text3D key={i} primary={val} secondary={val} />
                 ))}
               </div>
+              {/* socials */}
               <div className="mt-40">Follow Me On</div>
               <div className="text-3xl flex justify-around mt-5">
                 <FaGithub className="cursor-pointer transition-all duration-100 rounded-full hover:text-white hover:ring-white hover:bg-black" />
                 <FaInstagram className="cursor-pointer transition-all duration-100 hover:text-red-400" />
                 <FaLinkedin className="cursor-pointer transition-all duration-100 hover:text-blue-400" />
+              </div>
+               {/* dark mode toggle */}
+              <div className="mt-20 flex justify-between sm:hidden">
+                <p className="font-semibold">Dark Mode</p> 
+                  <ThemeBtn id={2} />
               </div>
             </motion.div>
           </div>

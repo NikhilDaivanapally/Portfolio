@@ -21,7 +21,7 @@ const TechStacks = () => {
       Tailwindcss: (
         <RiTailwindCssFill className="stroke-[#45BEF9] fill-[#45BEF9]" />
       ),
-      Gsap: <img src="https://gsap.com/favicon-32x32.png" className="w-6" />,
+      Gsap: <img src="https://cdn.brandfetch.io/idpOtkzwVb/w/400/h/400/theme/dark/icon.jpeg?c=1bfwsmEH20zzEfSNTed" className="w-6" />,
       FramerMotion: <SiFramer />,
       swiperjs: (
         <img src="https://swiperjs.com/images/favicon.png" className="w-6" />
