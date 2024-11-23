@@ -44,9 +44,9 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative  bg-background overflow-hidden text-textcolor">
-      <div className="hidden bg-red-200 sm:flex w-full items-center pt-4 justify-center">
-        <div className="w-fit h-[50px] bg-Navbackground ring-1 ring-Navborder  rounded-sm  text-textcolor p-4 hidden  sm:flex sm:items-center sm:gap-10  ">
+    <div className="relative w-full h-full bg-background  text-textcolor">
+      <div className="hidden  sm:flex w-full p-3 items-center justify-center">
+        <div className="w-fit h-[50px] bg-Navbackground ring-1 ring-Navborder rounded-sm  text-textcolor p-4 hidden  sm:flex sm:items-center sm:gap-10  ">
           {!(pathname == "/") && (
             <Link to={"/"} key={"home"}>
               <BiHomeAlt2 className="text-xl" />
@@ -67,20 +67,22 @@ const Layout = () => {
             </Link>
           ))}
         </div>
-        <input
-          type="checkbox"
-          id="theme"
-          className="peer"
-          hidden
-          checked={isDarktheme}
-          onChange={handleChangeTheme}
-        />
-        <label
-          htmlFor="theme"
-          className="hidden cursor-pointer sm:flex justify-self-end absolute after:transition-all duration-300 peer-checked:after:translate-x-full right-40 text-xl bg-Navbackground ring-1 ring-Navborder  w-16 h-8 rounded-full items-center justify-between px-2 py-2 after:content-[''] after:absolute after:w-6 after:h-6 after:bg-[#827EFC] after:rounded-full"
-        >
-          <CiLight /> <CiDark />
-        </label>
+        <div className="absolute right-10">
+          <input
+            type="checkbox"
+            id="theme"
+            className="peer cursor-pointer"
+            hidden
+            checked={isDarktheme}
+            onChange={handleChangeTheme}
+          />
+          <label
+            htmlFor="theme"
+            className="hidden cursor-pointer sm:flex  after:transition-all duration-300 peer-checked:after:translate-x-full right-40 text-xl bg-Navbackground ring-1 ring-Navborder  w-16 h-8 rounded-full items-center justify-between px-2 py-2 after:content-[''] after:absolute after:w-6 after:h-6 after:bg-[#827EFC] after:rounded-full"
+          >
+            <CiLight /> <CiDark />
+          </label>
+        </div>
       </div>
 
       <Navbar
@@ -90,7 +92,7 @@ const Layout = () => {
       />
 
       <ToastConfig />
-      <div className="pt-0 sm:pt-20">
+      <div className="pt-0 sm:pt-10">
         <Outlet />
       </div>
     </div>

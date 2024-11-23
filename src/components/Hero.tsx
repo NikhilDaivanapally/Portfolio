@@ -2,7 +2,7 @@ import { GrGithub } from "react-icons/gr";
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
-    <div className="w-full h-screen overflow-hidden text-textcolor  bg-[url('https://images.unsplash.com/photo-1722480403866-fc98f4789f00?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-cover sm:bg-none sm:px-10">
+    <div className="w-full h-screen sm:h-[90vh] overflow-hidden text-textcolor  bg-[url('https://images.unsplash.com/photo-1722480403866-fc98f4789f00?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-cover sm:bg-none sm:px-10">
       <div className="flex overflow-hidden   justify-between sm:items-center">
         <div className="mt-[450px] m-5 sm:mt-60">
           <p className="text-3xl text-textcolor  sm:text-5xl">Hi There 👋🏼</p>

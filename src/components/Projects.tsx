@@ -41,8 +41,8 @@ const Projects = () => {
             Some of my Recent <span className="text-[#827EFC]">Projects</span>
           </p>
         </div>
-
-        <div className="relative z-5 w-full  flex flex-wrap justify-center gap-6 py-10 sm:py-20 px-0 sm:px-10">
+        {/* larger screens */}
+        <div className="relative z-5 w-full hidden sm:flex flex-wrap justify-center gap-6 py-10 sm:py-20 px-0 sm:px-10">
           {Projectslist?.slice(0, 3)?.map((project, i) => {
             return (
               <Tilt
@@ -107,7 +107,65 @@ const Projects = () => {
 
           {/* see more */}
         </div>
-        <div className="w-full relative h-10">
+
+        {/* small screens (Mobile) */}
+        <div className="relative z-5 w-full  flex sm:hidden flex-wrap justify-center gap-6 py-10 sm:py-20 px-0 sm:px-10">
+          {Projectslist?.slice(0, 3)?.map((project, i) => {
+            return (
+              <div
+                key={`project${i + 1}`}
+                className="w-full h-fit gap-4 cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[500px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between"
+              >
+                {/* project image */}
+                <div className="w-full h-[300px] rounded-lg cursor-pointer">
+                  <img
+                    className="w-full h-full object-cover border-2 rounded-lg shadow-md"
+                    src={project.image}
+                    alt=""
+                  />
+                </div>
+                {/* project description */}
+                <div className="mt-2 leading-tight">{project.description}</div>
+                {/* TechStackused and live link */}
+                <div className="flex items-center">
+                  {/* TechStacks */}
+                  <ul className="flex-1 flex gap-2 list-none  cursor-pointer">
+                    {project.techstacksused.map((stack: string, i: number) => (
+                      <li key={`${stack}_${i}`}>{TechStacks[stack]}</li>
+                    ))}
+                  </ul>
+                  {/* live link */}
+                  {project.githubRepo && (
+                    <a
+                      href={project.githubRepo}
+                      target="_blank"
+                      className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
+                    >
+                      <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
+                        Github Repo
+                        <GoArrowUpRight />
+                      </div>
+                    </a>
+                  )}
+                  <a
+                    href={project.livelink}
+                    target="_blank"
+                    className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
+                  >
+                    <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
+                      Live link
+                      <GoArrowUpRight />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* see more */}
+        </div>
+
+        <div className="w-full relative">
           <Link
             to={"/projects"}
             className="w-fit block ml-auto p-2 px-4 cursor-pointer rounded-full border-[1px] border-[#827EFC]"

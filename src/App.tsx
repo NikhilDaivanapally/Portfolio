@@ -40,7 +40,7 @@ function App() {
   ]);
 
   return (
-    <main className="w-full min-h-screen font-Gilroy overflow-hidden bg-background">
+    <main className="w-full h-full font-Gilroy bg-background">
       <AnimatePresence mode="wait">
         <RouterProvider router={router} />
       </AnimatePresence>
