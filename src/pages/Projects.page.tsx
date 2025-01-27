@@ -60,7 +60,7 @@ const Projects = () => {
             return (
               <div
                 key={`project${i + 1}`}
-                className="w-full h-fit gap-4 cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[500px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03]"
+                className="w-full h-fit gap-6 cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[500px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03]"
               >
                 {/* project image */}
                 <div className="w-full h-[300px] rounded-lg cursor-pointer">
