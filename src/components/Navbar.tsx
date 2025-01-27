@@ -17,7 +17,6 @@ interface navProps {
 // const Navigates: string[] = ["Projects", "Contact", "About"];
 const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
   const { pathname } = useLocation();
-
   return (
     <>
       <div className="fixed z-50 right-5 top-5 flex items-center gap-2">
@@ -65,7 +64,7 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                   <Link to={el.path}>
                     <span
                       key={i}
-                      onClick={() => setIsMenuOpen((prev) => !prev)}
+                      // onClick={() => setIsMenuOpen((prev) => !prev)}
                       className={`relative w-fit flex cursor-pointer text-5xl font-semibold group hover:text-[#827EFC]`}
                     >
                       <MdOutlineArrowForwardIos

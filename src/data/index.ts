@@ -1,102 +1,52 @@
-import chatapp from "../assets/Untitled design (2).png";
-
+import chatapp from "../assets/Screenshot 2025-01-27 161945.png";
+import ecommerce from "../assets/Screenshot 2025-01-27 164129.png";
+import portfolio from "../assets/Screenshot 2025-01-27 165738.png";
 export const Projectslist = [
   {
     image: chatapp,
     description:
-      "A Chat App that allows user to chat with single member or a of group members where they can able to send text and images",
+      "A chat application that enables users to engage in one-on-one conversations or group chats with multiple members. Users can send text messages, share images, and enjoy features like real-time messaging, delivery status indicators (sent, delivered, and read receipts)",
     techstacksused: [
       "Html",
       "Css",
       "Js",
       "React",
+      "Redux",
       "Node",
       "Express",
       "Mongodb",
+      "Passport",
+      "Scoketio",
+      "Redis",
     ],
-    githubRepo: "",
-    livelink: "https://chat-app-fawn-six.vercel.app/login",
+    githubRepo: "https://github.com/NikhilDaivanapally/ByteMessenger",
+    livelink: "https://byte-messenger.vercel.app/login",
   },
   {
-    image:
-      "https://cdn.dribbble.com/userupload/10799697/file/original-70a5f184184531b5c913d354b4bf3955.png?resize=400x300&vertical=center",
+    image: ecommerce,
     description:
-      "A Chat App that allows user to chat with single member or a of group members where they can able to send text and images",
+      "An e-commerce clothing store featuring categories such as men's, women's, and kids' clothing, allowing customers to browse and purchase their desired items. The store includes features like breadcrumb navigation, a wishlist, a shopping cart, a search functionality, and filters based on price, brand, and more.",
     techstacksused: [
       "Html",
       "Css",
       "Js",
       "React",
+      "Redux",
       "Node",
       "Express",
-      "Mongodb",
+      "Mysql",
+      "Passport",
+      "Redis",
     ],
-    githubRepo: "",
-    livelink: "https://chat-app-fawn-six.vercel.app/login",
+    githubRepo: "https://github.com/NikhilDaivanapally/WearClothing_Ecommerce",
+    livelink: "https://wearclothings.vercel.app",
   },
   {
-    image:
-      "https://cdn.dribbble.com/userupload/11470793/file/original-9c6201ef3215174d0d18ab61c7acd8f0.png?resize=400x300&vertical=center",
-    description: "",
-    techstacksused: [
-      "Html",
-      "Css",
-      "Js",
-      "React",
-      "Node",
-      "Express",
-      "Mongodb",
-    ],
-    githubRepo: "",
-    livelink: "",
-  },
-  {
-    image:
-      "https://cdn.dribbble.com/userupload/11470793/file/original-9c6201ef3215174d0d18ab61c7acd8f0.png?resize=400x300&vertical=center",
-    description: "",
-    techstacksused: [
-      "Html",
-      "Css",
-      "Js",
-      "React",
-      "Node",
-      "Express",
-      "Mongodb",
-    ],
-    githubRepo: "",
-    livelink: "",
-  },
-  {
-    image:
-      "https://cdn.dribbble.com/userupload/11470793/file/original-9c6201ef3215174d0d18ab61c7acd8f0.png?resize=400x300&vertical=center",
-    description: "",
-    techstacksused: [
-      "Html",
-      "Css",
-      "Js",
-      "React",
-      "Node",
-      "Express",
-      "Mongodb",
-    ],
-    githubRepo: "",
-    livelink: "",
-  },
-  {
-    image:
-      "https://cdn.dribbble.com/userupload/11470793/file/original-9c6201ef3215174d0d18ab61c7acd8f0.png?resize=400x300&vertical=center",
-    description: "",
-    techstacksused: [
-      "Html",
-      "Css",
-      "Js",
-      "React",
-      "Node",
-      "Express",
-      "Mongodb",
-    ],
-    githubRepo: "",
-    livelink: "",
+    image: portfolio,
+    description: "Personal Portfolio",
+    techstacksused: ["Html", "Css", "Js", "React", "Gsap", "Framermotion"],
+    githubRepo: "https://github.com/NikhilDaivanapally/Portfolio",
+    livelink: "https://nikhilportfolio-alpha.vercel.app/",
   },
 ];
 

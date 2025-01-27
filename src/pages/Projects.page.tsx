@@ -4,9 +4,19 @@ import { FaCss3Alt, FaHtml5, FaNode, FaReact } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress, SiMongodb } from "react-icons/si";
+import {
+  SiExpress,
+  SiFramer,
+  SiGreensock,
+  SiMongodb,
+  SiPassport,
+  SiRedis,
+  SiRedux,
+  SiSocketdotio,
+} from "react-icons/si";
 import { animatePageIn } from "../animation/page.anim";
 import { Projectslist } from "../data";
+import { GrMysql } from "react-icons/gr";
 
 const Projects = () => {
   useEffect(() => {
@@ -17,10 +27,17 @@ const Projects = () => {
     Css: <FaCss3Alt className="stroke-[#264DE4] fill-[#264DE4]" />,
     Js: <IoLogoJavascript className="stroke-[#F0DC4E] fill-[#cdb609]" />,
     React: <FaReact className="stroke-[#02DAF9] fill-[#02DAF9]" />,
+    Redux: <SiRedux className="stroke-[#744DB6] fill-[#744DB6]" />,
+    Passport: <SiPassport className="stroke-[#5FDD67] fill-[#5FDD67]" />,
     Tailwindcss: <RiTailwindCssFill className="stroke-[] fill-[]" />,
     Node: <FaNode className="stroke-[#609A53] fill-[#609A53]" />,
     Expressjs: <SiExpress className="stroke-[] fill-[]" />,
     Mongodb: <SiMongodb className="stroke-[#18A54F] fill-[#18A54F]" />,
+    Scoketio: <SiSocketdotio />,
+    Redis: <SiRedis className="stroke-[#FF4438] fill-[#FF4438]" />,
+    Mysql: <GrMysql className="stroke-[#015980] fill-[#015980]" />,
+    Framermotion: <SiFramer />,
+    Gsap: <SiGreensock className="stroke-[#0FE141] fill-[#0FE141]" />,
   };
 
   // const defaultOptions = {
@@ -41,7 +58,6 @@ const Projects = () => {
         <div className="relative z-5 w-full  flex flex-wrap justify-center gap-6 py-5 sm:py-10 px-0 sm:px-10">
           {Projectslist.map((project, i) => {
             return (
-
               <div
                 key={`project${i + 1}`}
                 className="w-full h-fit gap-4 cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[500px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03]"
