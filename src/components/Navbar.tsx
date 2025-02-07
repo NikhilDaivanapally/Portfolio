@@ -1,9 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuSlide } from "../animation/Menu.anim";
-// import Text3D from "./ui/Text3D";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Navigates } from "../data";
 import { Link, useLocation } from "react-router-dom";
 import { BiHomeAlt2 } from "react-icons/bi";
@@ -81,16 +80,20 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                       {el.name}
                     </span>
                   </Link>
-
-                  // <Text3D key={i} primary={val} secondary={val} />
                 ))}
               </div>
               {/* socials */}
               <div className="mt-40">Follow Me On</div>
               <div className="text-3xl flex justify-around mt-5">
-                <FaGithub className="cursor-pointer transition-all duration-100 rounded-full hover:text-white hover:ring-white hover:bg-black" />
-                <FaInstagram className="cursor-pointer transition-all duration-100 hover:text-red-400" />
-                <FaLinkedin className="cursor-pointer transition-all duration-100 hover:text-blue-400" />
+                <a href="https://github.com/NikhilDaivanapally" target="_blank">
+                  <FaGithub className="cursor-pointer transition-all duration-100 rounded-full hover:text-white hover:ring-white hover:bg-black" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nikhil-daivanapally/"
+                  target="_blank"
+                >
+                  <FaLinkedin className="cursor-pointer transition-all duration-100 hover:text-blue-400" />
+                </a>
               </div>
               {/* dark mode toggle */}
               <div className="mt-20 flex justify-between sm:hidden">

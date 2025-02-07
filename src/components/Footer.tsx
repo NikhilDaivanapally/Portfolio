@@ -66,9 +66,9 @@ const Footer = () => {
         <ul className="flex gap-4 text-lg md:text-xl">
           {Socials.map((el) => {
             return (
-              <Link to={"/"} key={el}>
-                {el}
-              </Link>
+              <a href={el.link} target="_blank" key={el.name}>
+                {el.name}
+              </a>
             );
           })}
         </ul>

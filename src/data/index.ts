@@ -65,4 +65,11 @@ export const Navigates = [
   },
 ];
 
-export const Socials = ["Github", "LinkedIn", "Instagram"];
+export const Socials = [
+  { name: "Github", link: "https://github.com/NikhilDaivanapally" },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/nikhil-daivanapally/",
+  },
+];
+
