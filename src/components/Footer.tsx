@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Socials } from "../data";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
