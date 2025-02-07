@@ -39,7 +39,7 @@ const Layout = () => {
   
 
   return (
-    <div className="relative w-full h-full bg-background  text-textcolor">
+    <div className="relative w-full h-full bg-background overflow-x-hidden text-textcolor">
       <div className="hidden  sm:flex w-full p-3 items-center justify-center">
         <div className="w-fit h-[50px] bg-Navbackground ring-1 ring-Navborder rounded-sm  text-textcolor p-4 hidden  sm:flex sm:items-center sm:gap-10  ">
           {!(pathname == "/") && (

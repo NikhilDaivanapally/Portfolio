@@ -85,7 +85,7 @@ const Projects = () => {
                     {project.description}
                   </div>
                   {/* TechStackused and live link */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     {/* TechStacks */}
                     <ul className="flex-1 flex gap-2 list-none  cursor-pointer">
                       {project.techstacksused.map(
@@ -147,37 +147,41 @@ const Projects = () => {
                 {/* project description */}
                 <div className="mt-2 leading-tight">{project.description}</div>
                 {/* TechStackused and live link */}
-                <div className="flex items-center">
-                  {/* TechStacks */}
-                  <ul className="flex-1 flex gap-2 list-none  cursor-pointer">
-                    {project.techstacksused.map((stack: string, i: number) => (
-                      <li key={`${stack}_${i}`}>{TechStacks[stack]}</li>
-                    ))}
-                  </ul>
-                  {/* live link */}
-                  {project.githubRepo && (
-                    <a
-                      href={project.githubRepo}
-                      target="_blank"
-                      className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
-                    >
-                      <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
-                        Github Repo
-                        <GoArrowUpRight />
-                      </div>
-                    </a>
-                  )}
-                  <a
-                    href={project.livelink}
-                    target="_blank"
-                    className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
-                  >
-                    <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
-                      Live link
-                      <GoArrowUpRight />
+                <div className="flex flex-col gap-4">
+                    {/* TechStacks */}
+                    <ul className="flex-1 flex gap-2 list-none  cursor-pointer">
+                      {project.techstacksused.map(
+                        (stack: string, i: number) => (
+                          <li key={`${stack}_${i}`}>{TechStacks[stack]}</li>
+                        )
+                      )}
+                    </ul>
+                    {/* live link */}
+                    <div className="w-fit flex self-end">
+                      {project.githubRepo && (
+                        <a
+                          href={project.githubRepo}
+                          target="_blank"
+                          className="mx-1 w-fit self-end text-sm transition-all duration-200 scale-90 hover:scale-100"
+                        >
+                          <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
+                            Github Repo
+                            <GoArrowUpRight />
+                          </div>
+                        </a>
+                      )}
+                      <a
+                        href={project.livelink}
+                        target="_blank"
+                        className="mx-1 w-fit text-sm transition-all duration-200 scale-90 hover:scale-100"
+                      >
+                        <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
+                          Live link
+                          <GoArrowUpRight />
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </div>
+                  </div>
               </div>
             );
           })}

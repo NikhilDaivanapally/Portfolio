@@ -20,6 +20,7 @@ export const animatePageIn = () => {
     });
     tl.to(page, {
       opacity: 0,
+      display:"none"
     });
     tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
       yPercent: 0,

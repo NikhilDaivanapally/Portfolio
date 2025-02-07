@@ -60,7 +60,7 @@ const Projects = () => {
             return (
               <div
                 key={`project${i + 1}`}
-                className="w-full h-fit cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[570px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03]"
+                className="w-full h-fit cursor-pointer sm:gap-0 sm:w-[400px] sm:h-[580px] bg-cardsbackground text-textcolor rounded-lg p-6 flex flex-col justify-between transition-all duration-200"
               >
                 {/* project image */}
                 <div className="w-full h-[300px] rounded-lg cursor-pointer">
@@ -73,7 +73,7 @@ const Projects = () => {
                 {/* project description */}
                 <div className="mt-2 leading-tight">{project.description}</div>
                 {/* TechStackused and live link */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                   {/* TechStacks */}
                   <ul className="flex-1 flex gap-2 list-none  cursor-pointer">
                     {project.techstacksused.map((stack: string, i: number) => (
@@ -81,12 +81,12 @@ const Projects = () => {
                     ))}
                   </ul>
                   {/* live link */}
-                  <div className="w-fit flex self-end">
+                  <div className="w-fit flex">
                     {project.githubRepo && (
                       <a
                         href={project.githubRepo}
-                        target="_blank"
-                        className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
+                         target="_blank"
+                      className="mx-1 text-sm transition-all duration-200 scale-90"
                       >
                         <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
                           Github Repo
@@ -97,7 +97,7 @@ const Projects = () => {
                     <a
                       href={project.livelink}
                       target="_blank"
-                      className="mx-1 text-sm transition-all duration-200 scale-90 hover:scale-100"
+                      className="mx-1 text-sm transition-all duration-200 scale-90"
                     >
                       <div className="flex items-center text-[#827EFC] pb-[.5px] border-b-2 border-[#827EFC]">
                         Live link
@@ -113,7 +113,7 @@ const Projects = () => {
           {/* see more */}
         </div>
       </div>
-      ;
+      
     </Template>
   );
 };

@@ -23,6 +23,7 @@ const Home = () => {
         start: "0% 90%",
         end: "200 90%",
         scrub: 2,
+        once: true,
       },
     });
     gsap.to(".TechStackReveal", {
@@ -32,6 +33,7 @@ const Home = () => {
         start: "0% 90%",
         end: "200 90%",
         scrub: 2,
+        once: true,
       },
     });
 
@@ -44,6 +46,7 @@ const Home = () => {
         start: "0% 70%",
         end: "60% 70%",
         scrub: 2,
+        once: true,
       },
     });
     gsap.to(".frontend", {
@@ -57,6 +60,7 @@ const Home = () => {
         start: "top 90%",
         end: "top 80%",
         scrub: 2,
+        once: true,
       },
     });
     gsap.to(".backend", {
@@ -70,11 +74,12 @@ const Home = () => {
         start: "top 90%",
         end: "top 80%",
         scrub: 2,
+        once: true,
       },
     });
   });
   return (
-    <Template page="Home">
+    <Template page="Hi 👋🏼">
       <div>
         <Hero />
         <TechStacks />
