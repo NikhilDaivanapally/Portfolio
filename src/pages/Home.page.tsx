@@ -12,7 +12,6 @@ import { Template } from "../template";
 const Home = () => {
   useEffect(() => {
     animatePageIn();
-    // animatePageOut();
   }, []);
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {

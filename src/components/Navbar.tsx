@@ -13,8 +13,7 @@ interface navProps {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
-// interface Navigates
-// const Navigates: string[] = ["Projects", "Contact", "About"];
+
 const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
   const { pathname } = useLocation();
   return (
@@ -22,7 +21,10 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
       <div className="fixed z-50 right-5 top-5 flex items-center gap-2">
         {!(pathname == "/") && (
           <Link to={"/"} className="sm:hidden">
-            <div className="w-10 h-10 rounded-full bg-background border-[1px] flex items-center justify-center border-[#c9c7fe]">
+            <div
+              onClick={() => setIsMenuOpen(false)}
+              className="w-10 h-10 rounded-full bg-background border-[1px] flex items-center justify-center border-[#c9c7fe]"
+            >
               <BiHomeAlt2 className="text-xl" />
             </div>
           </Link>
@@ -64,11 +66,17 @@ const Navbar: React.FC<navProps> = ({ navbar, isMenuOpen, setIsMenuOpen }) => {
                   <Link to={el.path}>
                     <span
                       key={i}
-                      // onClick={() => setIsMenuOpen((prev) => !prev)}
-                      className={`relative w-fit flex cursor-pointer text-5xl font-semibold group hover:text-[#827EFC]`}
+                      onClick={() => setIsMenuOpen((prev) => !prev)}
+                      className={`relative w-fit flex cursor-pointer text-5xl font-semibold ${
+                        pathname == `/${el.name.toLowerCase()}`
+                          ? "text-[#827EFC]"
+                          : ""
+                      } group hover:text-[#827EFC]`}
                     >
                       <MdOutlineArrowForwardIos
-                        className={`leading-none transition-all duration-300 w-0  group-hover:w-8`}
+                        className={`leading-none transition-all duration-300 w-0 ${
+                          pathname == `/${el.name.toLowerCase()}` ? "w-8" : ""
+                        } group-hover:w-8`}
                       />{" "}
                       {el.name}
                     </span>

@@ -21,11 +21,11 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <img
+          {/* <img
             className="h-[600px] w-auto object-cover rounded-sm hidden sm:flex"
             src="https://images.unsplash.com/photo-1722480403866-fc98f4789f00?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
-          />
+          /> */}
         </motion.div>
       </div>
     </div>

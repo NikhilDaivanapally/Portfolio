@@ -5,27 +5,26 @@ import { Navigates } from "./data";
 import { BiHomeAlt2 } from "react-icons/bi";
 import ToastConfig from "./toastConfig/ToastConfig";
 import ThemeBtn from "./components/ThemeBtn";
+
 const Layout = () => {
   const [navbar, setNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [active, setActive] = useState(0);
+  const [activepath, setActivePath] = useState("");
   const { pathname } = useLocation();
-  useEffect(() => {
-    let index = Navigates.findIndex((el) => el.path == pathname);
-    setActive(index);
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setActivePath(pathname.split("/")[1]);
   }, [pathname]);
 
   const handleScroll = () => {
-    if (window.scrollY > 100 && !isMenuOpen) {
+    if (window.scrollY > 80 && !isMenuOpen) {
       setNavbar(true);
     } else {
       setNavbar(false);
     }
   };
+
   useEffect(() => {
     if (!isMenuOpen) {
       window.addEventListener("scroll", handleScroll);
@@ -35,8 +34,6 @@ const Layout = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isMenuOpen]);
-
-  
 
   return (
     <div className="relative w-full h-full bg-background overflow-x-hidden text-textcolor">
@@ -49,16 +46,18 @@ const Layout = () => {
           )}
           {Navigates?.map((el, i) => (
             <Link to={el.path} key={i}>
-              <span
-                onClick={() => setActive(i)}
-                className={`relative text-textcolor cursor-pointer after:absolute after:top-full after:left-1/2 after:mt-1 after:w-1.5 after:h-1.5 after:rounded-full after:bg-textcolor after:scale-0 ${
-                  active == i ? "after:scale-100" : ""
-                } hover:after:scale-100  after:transform after:transition-transform 
+              <div
+                onClick={() => {
+                  setActivePath(el.name.toLowerCase());
+                }}
+                className={`relative text-textcolor cursor-pointer after:absolute after:top-full after:left-1/2 after:mt-1 after:w-2.5 after:h-1.5 after:rounded-full after:bg-textcolor after:scale-0 ${
+                  activepath == el.name.toLowerCase() ? "after:scale-100" : ""
+                } hover:after:scale-100  after:transform after:transition-transform after:transform-origin
               `}
                 key={i}
               >
                 {el.name}
-              </span>
+              </div>
             </Link>
           ))}
         </div>
