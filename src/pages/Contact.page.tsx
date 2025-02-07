@@ -3,7 +3,6 @@ import { animatePageIn } from "../animation/page.anim";
 import { Template } from "../template";
 import { Socials } from "../data";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
 const access_key = import.meta.env.VITE_web3form_AccessKey;
 const Contact = () => {
   const [isSent, setIsSent] = useState(false);
@@ -16,7 +15,7 @@ const Contact = () => {
     setIsSent(true);
     const formData = new FormData(event.target as HTMLFormElement);
     formData.append("access_key", access_key);
-    const email:any = formData.get("email");
+    const email: any = formData.get("email");
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
     const isValidEmail = emailRegex.test(email);
@@ -128,9 +127,9 @@ const Contact = () => {
               <ul className="flex gap-10">
                 {Socials.map((el) => {
                   return (
-                    <Link to={"/"} key={el}>
-                      {el}
-                    </Link>
+                    <a href={el.link} target="_blank" key={el.name}>
+                      {el.name}
+                    </a>
                   );
                 })}
               </ul>
